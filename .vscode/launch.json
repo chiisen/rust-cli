@@ -7,15 +7,15 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable 'guess'",
+            "name": "Debug executable 'actixweb'",
             "cargo": {
                 "args": [
                     "build",
-                    "--bin=guess",
-                    "--package=guess"
+                    "--bin=actixweb",
+                    "--package=actixweb"
                 ],
                 "filter": {
-                    "name": "guess",
+                    "name": "actixweb",
                     "kind": "bin"
                 }
             },
@@ -25,16 +25,16 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug unit tests in executable 'guess'",
+            "name": "Debug unit tests in executable 'actixweb'",
             "cargo": {
                 "args": [
                     "test",
                     "--no-run",
-                    "--bin=guess",
-                    "--package=guess"
+                    "--bin=actixweb",
+                    "--package=actixweb"
                 ],
                 "filter": {
-                    "name": "guess",
+                    "name": "actixweb",
                     "kind": "bin"
                 }
             },
