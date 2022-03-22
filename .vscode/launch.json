@@ -7,15 +7,15 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable 'actixweb'",
+            "name": "Debug executable 'web_hello'",
             "cargo": {
                 "args": [
                     "build",
-                    "--bin=actixweb",
-                    "--package=actixweb"
+                    "--bin=web_hello",
+                    "--package=web_hello"
                 ],
                 "filter": {
-                    "name": "actixweb",
+                    "name": "web_hello",
                     "kind": "bin"
                 }
             },
@@ -25,16 +25,16 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug unit tests in executable 'actixweb'",
+            "name": "Debug unit tests in executable 'web_hello'",
             "cargo": {
                 "args": [
                     "test",
                     "--no-run",
-                    "--bin=actixweb",
-                    "--package=actixweb"
+                    "--bin=web_hello",
+                    "--package=web_hello"
                 ],
                 "filter": {
-                    "name": "actixweb",
+                    "name": "web_hello",
                     "kind": "bin"
                 }
             },
