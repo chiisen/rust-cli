@@ -1,18 +1,19 @@
-use actix_web::{get, web, App, HttpServer, Responder};
+extern crate clap;
 
-#[get("/{id}/{name}/index.html")]
-async fn index(params: web::Path<(u32, String)>) -> impl Responder {
-    let (id, name) = params.into_inner();
-    format!("Hello {}! id:{}", name, id)
-}
+use clap::{Arg, App};
 
-#[actix_web::main] // or #[tokio::main]
-async fn main() -> std::io::Result<()> {
-    
-    println!("程式啟動!");
+fn main() {
+    let _matches = App::new("rust-cli")
+        .version("1.0.1")
+        .author("Sam")
+        .about("用 Rust 打造的第一个命令行工具")
+        .arg(Arg::with_name("FILE")
+            .help("File to print.")
+            .empty_values(false)
+        )
+        .get_matches();
 
-    HttpServer::new(|| App::new().service(index))
-        .bind(("127.0.0.1", 3000))?
-        .run()
-        .await
+    if let Some(file) = _matches.value_of("FILE") {
+        println!("Value for file argument: {}", file);
+    }
 }
