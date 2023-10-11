@@ -27,7 +27,7 @@ ARGS:
 
 ## 顯示版本號
 ```
-cargo run -- -v
+cargo run -- -V
 ```
 
 ```
