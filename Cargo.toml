@@ -8,3 +8,4 @@ authors = ["Sam (@chiisen)"]
 
 [dependencies]
 clap = "~2.32"
+matches = "0.1.10"

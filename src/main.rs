@@ -1,10 +1,11 @@
 extern crate clap;
 
+
 use clap::{Arg, App};
-use std::path::Path;
-use std::process;
-use std::fs::File;
-use std::io::{Read};
+
+
+mod file;
+mod number;
 
 /// # Rust CLI
 /// 程式碼進入點
@@ -38,27 +39,11 @@ fn main() {
         .get_matches();
 
     if let Some(file) = matches.value_of("FILE") {
-        if Path::new(&file).exists() {
-            println!("【{file}】 : 檔案存在!!");
-            let mut f = File::open(file).expect("[rust-cli Error] 檔案找不到.");
-            let mut data = String::new();
-            f.read_to_string(&mut data).expect("[rust-cli Error] 無法讀取檔案.");
-            println!("{}", data);
-        }
-        else {
-            eprintln!("[rust-cli Error] 檔案不存在.");
-            process::exit(1);// 程式錯誤終止時的標準退出碼
-        }
+        file::command_file(file);
     }
 
-    let num_str = matches.value_of("NUMBER");
-    match num_str {
-        None => println!("請輸入你喜歡的數字."),
-        Some(s) => {
-            match s.parse::<i32>() {
-                Ok(n) => println!("你的幸運數字是 {}.", n + 7),
-                Err(_) => println!("這不是數字喔! {}", s),
-            }
-        }
+    if let Some(num_str) = matches.value_of("NUMBER"){
+        number::command_number(Option::from(num_str));
     }
 }
+
