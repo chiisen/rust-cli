@@ -4,8 +4,15 @@ extern crate clap;
 use clap::{Arg, App};
 
 
-mod file;
-mod number;
+mod command
+{
+    #[path = "file.rs"]
+    pub mod file;
+    // 中間要空一行
+    #[path = "number.rs"]
+    pub mod number;
+}
+
 
 /// # Rust CLI
 /// 程式碼進入點
@@ -39,11 +46,11 @@ fn main() {
         .get_matches();
 
     if let Some(file) = matches.value_of("FILE") {
-        file::command_file(file);
+        command::file::command_file(file);
     }
 
     if let Some(num_str) = matches.value_of("NUMBER"){
-        number::command_number(Option::from(num_str));
+        command::number::command_number(Option::from(num_str));
     }
 }
 
