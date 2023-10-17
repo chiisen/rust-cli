@@ -35,3 +35,24 @@ Finished dev [unoptimized + debuginfo] target(s) in 0.02s
      Running `target\debug\rust-cli.exe -V`
 rust-cli 0.1.0
 ```
+
+## 顯示檔案內容
+```
+cargo run -- -f Cargo.toml
+```
+
+```
+Finished dev [unoptimized + debuginfo] target(s) in 0.02s
+     Running `target\debug\rust-cli.exe -f Cargo.toml`
+【Cargo.toml】 : 檔案存在!!
+[package]
+name = "rust-cli"
+version = "1.1.0"
+edition = "2021"
+authors = ["Sam (@chiisen)"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = "~2.32"
+```
