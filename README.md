@@ -56,3 +56,14 @@ authors = ["Sam (@chiisen)"]
 [dependencies]
 clap = "~2.32"
 ```
+
+## 輸入數字加7
+```
+cargo run -- -n 168
+```
+
+```
+Finished dev [unoptimized + debuginfo] target(s) in 0.02s
+     Running `target\debug\rust-cli.exe -n 168`
+你的幸運數字是 175.
+```
