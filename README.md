@@ -68,6 +68,44 @@ Finished dev [unoptimized + debuginfo] target(s) in 0.02s
 你的幸運數字是 175.
 ```
 
+# 全域安裝
+```
+cargo install --path .
+```
+
+# 添加環境變數
+```
+export PATH="$HOME/.cargo/bin:$PATH"
+
+source ~/.bashrc  # 或者 source ~/.zshrc
+
+在 Windows 上
+添加 C:\Users\你的用戶名\.cargo\bin 到 Path 變數中
+```
+
+# 全域執行
+```
+rust-cli --help
+```
+
+# 編譯程式
+```
+cargo build
+
+# 優化版本
+cargo build --release
+```
+
+# 執行編譯程式
+```
+.\target\debug\rust-cli -help
+
+# 優化版本
+.\target\release\rust-cli -help
+```
+
+
+
 # git commit message
 - 常用描述
 ```

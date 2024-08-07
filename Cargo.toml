@@ -7,5 +7,10 @@ authors = ["Sam (@chiisen)"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+# 你的依賴項目
 clap = "~2.32"
 matches = "0.1.10"
+
+[[bin]]
+name = "rust-cli"
+path = "src/main.rs"
