@@ -10,3 +10,4 @@ Cargo.lock
 **/*.rs.bk
 /folderico-blue.ico
 /Desktop.ini
+/*.ico

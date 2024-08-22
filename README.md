@@ -1,12 +1,19 @@
 # rust-cli
 用 Rust 打造的第一个命令行工具
 
-## 指令說明
+# Rust 升級
+```shell
+rustc -V
+
+rustup update
 ```
+
+## 指令說明
+```shell
 cargo run -- -h
 ```
 
-```
+```shell
 Finished dev [unoptimized + debuginfo] target(s) in 0.02s
      Running `target\debug\rust-cli.exe -h`
 rust-cli 0.1.0
@@ -26,22 +33,22 @@ ARGS:
 ```
 
 ## 顯示版本號
-```
+```shell
 cargo run -- -V
 ```
 
-```
+```shell
 Finished dev [unoptimized + debuginfo] target(s) in 0.02s
      Running `target\debug\rust-cli.exe -V`
 rust-cli 0.1.0
 ```
 
 ## 顯示檔案內容
-```
+```shell
 cargo run -- -f Cargo.toml
 ```
 
-```
+```shell
 Finished dev [unoptimized + debuginfo] target(s) in 0.02s
      Running `target\debug\rust-cli.exe -f Cargo.toml`
 【Cargo.toml】 : 檔案存在!!
@@ -58,23 +65,23 @@ clap = "~2.32"
 ```
 
 ## 輸入數字加7
-```
+```shell
 cargo run -- -n 168
 ```
 
-```
+```shell
 Finished dev [unoptimized + debuginfo] target(s) in 0.02s
      Running `target\debug\rust-cli.exe -n 168`
 你的幸運數字是 175.
 ```
 
 # 全域安裝
-```
+```shell
 cargo install --path .
 ```
 
 # 添加環境變數
-```
+```shell
 export PATH="$HOME/.cargo/bin:$PATH"
 
 source ~/.bashrc  # 或者 source ~/.zshrc
@@ -84,12 +91,12 @@ source ~/.bashrc  # 或者 source ~/.zshrc
 ```
 
 # 全域執行
-```
+```shell
 rust-cli --help
 ```
 
 # 編譯程式
-```
+```shell
 cargo build
 
 # 優化版本
@@ -97,18 +104,16 @@ cargo build --release
 ```
 
 # 執行編譯程式
-```
+```shell
 .\target\debug\rust-cli -help
 
 # 優化版本
 .\target\release\rust-cli -help
 ```
 
-
-
 # git commit message
 - 常用描述
-```
+```shell
 ✨ feat: 需求功能描述
 🐛 fix: 修正 bug 的問題描述
 💄 optimize: 最佳化程式碼或功能流程
