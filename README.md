@@ -2,46 +2,58 @@
 用 Rust 打造的第一个命令行工具
 
 ## 指令說明
-```
+```bash
 cargo run -- -h
 ```
 
-```
-Finished dev [unoptimized + debuginfo] target(s) in 0.02s
+```bash
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
      Running `target\debug\rust-cli.exe -h`
-rust-cli 0.1.0
-Sam
-用 Rust 打造的第一个命令行工具
+App: rust-cli Version: 1.1.0
+Author: Sam (@chiisen)
+About: 用 Rust 打造的第一个命令行工具
 
 USAGE:
-    rust-cli.exe [FILE]
+    rust-cli.exe [OPTIONS]
+****
 
 FLAGS:
     -h, --help       Prints help information
-    -V, --version    Prints version information
-
-ARGS:
-    <FILE>    File to print.
+OPTIONS:--version    Prints version information
+    -e, --example <EXAMPLE>    cargo run -- -e 1 => 輸入數字加 1.
+    -f, --file <FILE>          cargo run -- -f Cargo.toml => 印出檔案內容.
+    -n, --number <NUMBER>      cargo run -- -n 168 => 輸入數字加 7.
 
 ```
 
 ## 顯示版本號
-```
+```bash
 cargo run -- -V
 ```
 
-```
+```bash
 Finished dev [unoptimized + debuginfo] target(s) in 0.02s
      Running `target\debug\rust-cli.exe -V`
 rust-cli 0.1.0
 ```
 
-## 顯示檔案內容
+## 範例
+```bash
+cargo run -- -e 1
 ```
+
+```bash
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target\debug\rust-cli.exe -e 1`
+你的幸運數字是 2.
+```
+
+## 顯示檔案內容
+```bash
 cargo run -- -f Cargo.toml
 ```
 
-```
+```bash
 Finished dev [unoptimized + debuginfo] target(s) in 0.02s
      Running `target\debug\rust-cli.exe -f Cargo.toml`
 【Cargo.toml】 : 檔案存在!!
@@ -58,11 +70,11 @@ clap = "~2.32"
 ```
 
 ## 輸入數字加7
-```
+```bash
 cargo run -- -n 168
 ```
 
-```
+```bash
 Finished dev [unoptimized + debuginfo] target(s) in 0.02s
      Running `target\debug\rust-cli.exe -n 168`
 你的幸運數字是 175.

@@ -11,6 +11,9 @@ mod command
     // 中間要空一行
     #[path = "number.rs"]
     pub mod number;
+
+    #[path = "example.rs"] // 外部引用的模組名稱叫做 command 目錄下 src/command/example.rs 模組名稱叫做 example
+    pub mod example;
 }
 
 
@@ -35,15 +38,20 @@ fn main() {
             .short("f")
             .long("file")
             .takes_value(true)
-            .help("印出檔案內容.")
+            .help("cargo run -- -f Cargo.toml => 印出檔案內容.")
             .empty_values(false)
         )
         .arg(Arg::with_name("NUMBER")
             .short("n")
             .long("number")
             .takes_value(true)
-            .help("輸入數字加 7."))
-        .get_matches();
+            .help("cargo run -- -n 168 => 輸入數字加 7."))
+        .arg(Arg::with_name("EXAMPLE")
+            .short("e")
+            .long("example")
+            .takes_value(true)
+            .help("cargo run -- -e 1 => 輸入數字加 1."))
+        .get_matches();// 它根據 App 和 Arg 結構定義的配置解析命令行參數
 
     if let Some(file) = matches.value_of("FILE") {
         command::file::command_file(file);
@@ -51,6 +59,10 @@ fn main() {
 
     if let Some(num_str) = matches.value_of("NUMBER"){
         command::number::command_number(Option::from(num_str));
+    }
+
+    if let Some(num_str) = matches.value_of("EXAMPLE"){
+        command::example::command_example(Option::from(num_str));
     }
 }
 
